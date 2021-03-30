@@ -1,0 +1,13 @@
+.core-inline-block {
+  display: inline-block;
+}
+.core-align-vm * {
+  vertical-align: middle;
+}
+.core-align-hr {
+  float: right;
+}
+.context {
+  display: block;
+  min-height: 35px;
+}
