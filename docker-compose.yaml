@@ -4,7 +4,7 @@ services:
     build: ./api-server
     environment:
       - NODE_ENV=dev
-      - ENV_PATH=.dev.env
+      - ENV_PATH=.env
     command: adonis serve --dev
     tty: true
     working_dir: /usr/src/app
