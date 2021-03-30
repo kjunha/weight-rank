@@ -1,0 +1,5 @@
+http://localhost:3333/api/v1/record/rank/bp
+#http://localhost:3333/api/v1/record/rank/sq
+#http://localhost:3333/api/v1/record/rank/dl
+#http://localhost:3333/api/v1/record/rank/vv
+http://localhost:3333/api/v1/record/personal/1307

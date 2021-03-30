@@ -1,0 +1,33 @@
+version: '3'
+services:
+  server:
+    build: ./api-server
+    environment:
+      - NODE_ENV=dev
+      - ENV_PATH=.dev.env
+    command: adonis serve --dev
+    tty: true
+    working_dir: /usr/src/app
+    volumes:
+      - ./api-server:/usr/src/app
+      - /usr/src/app/node_modules/
+    ports:
+      - 3333:3333
+    container_name: weight-rank-api
+    depends_on:
+      - db_mysql
+  db_mysql:
+    image: mysql:latest
+    restart: always
+    tty: true
+    command: --default-authentication-plugin=mysql_native_password
+    env_file:
+      - ./db/.dev.env
+    expose:
+      - 3307
+    ports:
+      - 3307:3307
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d
+    container_name: mysql_db

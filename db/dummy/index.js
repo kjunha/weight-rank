@@ -1,0 +1,36 @@
+let types = ['BP', 'SQ', 'DL'];
+let services = ['GITHUB', 'GOOGLE', 'FACEBOOK', 'NAVER', 'KAKAO'];
+let lines = [];
+let users = [];
+
+for (let i = 0; i < 100; i++) {
+  let lift_kg = (Math.random() * 299).toFixed(2) + 1;
+  let reps = Math.floor(Math.random() * 30 + 1);
+  let rm_kg = (lift_kg * reps).toFixed(2);
+  let rm_lb = (rm_kg * 2.20462).toFixed(2);
+  let cert_count = Math.floor(Math.random() * 15);
+  let user_id = Math.floor(Math.random() * 1000) + 1000;
+  while (true) {
+    if (users.includes(user_id)) {
+      user_id = Math.floor(Math.random() * 1000) + 1000;
+    } else {
+      users.push(user_id);
+      break;
+    }
+  }
+  console.log(
+    `(${user_id}, '${
+      types[Math.floor(Math.random() * 3)]
+    }', ${rm_kg}, ${rm_lb}, ${reps}, ${cert_count},'https://link.com'),`
+  );
+}
+console.log('################################');
+users.forEach((id, index) => {
+  console.log(`(${id}, 'AAAA', '${services[Math.floor(Math.random() * 5)]}'),`);
+});
+console.log('################################');
+users.forEach((id, index) => {
+  console.log(
+    `(${id}, 'test_user_${index}', 'https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y'),`
+  );
+});
