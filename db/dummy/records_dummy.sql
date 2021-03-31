@@ -202,7 +202,7 @@ values (1701, 'AAAA', 'KAKAO'),
        (1501, 'AAAA', 'KAKAO'),
        (1227, 'AAAA', 'KAKAO');
 
-insert into user_profiles (user_id, user_name, profile)
+insert into user_profiles (user_id, user_name, user_profile)
 values (1701, 'test_user_0', 'https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y'),
        (1047, 'test_user_1', 'https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y'),
        (1551, 'test_user_2', 'https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y'),
