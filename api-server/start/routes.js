@@ -21,6 +21,11 @@ Route.get('/', () => {
 });
 
 Route.group(() => {
+  Route.get('identity/:service', 'OauthController.getIdentityUrl')
+  Route.post('token/:service', 'OauthController.getAccessToken')
+}).prefix('api/v1/oauth')
+
+Route.group(() => {
   Route.get('rank/:type', 'RecordController.getList');
   Route.get('personal/:user_id', 'RecordController.getMyRecords');
   Route.post('personal/:user_id', 'RecordController.updateRecord');

@@ -26,7 +26,8 @@ for (let i = 0; i < 100; i++) {
 }
 console.log('################################');
 users.forEach((id, index) => {
-  console.log(`(${id}, 'AAAA', '${services[Math.floor(Math.random() * 5)]}'),`);
+  let service = services[Math.floor(Math.random() * 5)]
+  console.log(`(${id}, 'user_${id}@${service.toLowerCase()}.com', 'AAAA', '${service}'),`);
 });
 console.log('################################');
 users.forEach((id, index) => {

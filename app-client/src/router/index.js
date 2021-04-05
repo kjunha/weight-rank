@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import Main from '../views/Main';
 import SplashInit from '../views/SplashInit';
+import Login from '../views/Login'
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
     path: '/main/:type',
     name: 'main',
     component: Main,
+  },
+  {
+    path: '/authenticated/:service',
+    name: 'login',
+    component: Login
   },
   {
     path: '/init',
