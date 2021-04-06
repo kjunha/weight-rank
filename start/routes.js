@@ -21,8 +21,8 @@ Route.get('/', () => {
 });
 
 Route.group(() => {
-  Route.get('identity/:service', 'OauthController.getIdentityUrl')
-  Route.post('token/:service', 'OauthController.getAccessToken')
+  Route.get('identity/:service', 'UserController.getIdentityUrl')
+  Route.post('token/:service', 'UserController.getAccessToken')
 }).prefix('api/v1/oauth')
 
 Route.group(() => {
