@@ -15,10 +15,10 @@ class UserController extends BaseController{
     const email = user.getEmail()
     let userCheck = await User.query()
       .where('email', email)
-      .fetch()
-
-
-
+      .first()
+    if(!userCheck) {
+      return response.noContent('user_not_found')
+    }
     return response.send(user.getAccessToken())
   }
 
