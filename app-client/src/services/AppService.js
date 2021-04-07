@@ -15,10 +15,14 @@ export default class AppService {
   }
 
   getOauthIdentity(service) {
-    return this.$axios.get(`oauth/identity/${service}`);
+    return this.$axios.get(`user/identity/${service}`);
   }
 
   getOauthAccessToken(service, code) {
-    return this.$axios.post(`oauth/token/${service}?code=${code}`);
+    return this.$axios.post(`user/token/${service}?code=${code}`);
+  }
+
+  registerNewUser(code, name, profile) {
+    return this.$axios.post(`user/signup`, { code, name, profile })
   }
 }

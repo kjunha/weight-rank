@@ -16,6 +16,7 @@ services:
     container_name: weight-rank-api
     depends_on:
       - db_mysql
+      - db_redis
   db_mysql:
     image: mysql:8.0
     restart: always

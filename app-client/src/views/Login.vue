@@ -6,7 +6,7 @@
         <h3>{{ loadingMsg }}</h3>
       </div>
       <ion-modal :is-open='isSignup'>
-        <SignupModal @signup-did-dismiss='dismissSignup()'/>
+        <SignupModal :cache-key='code' @signup-did-dismiss='dismissSignup()' />
       </ion-modal>
     </ion-content>
   </ion-page>
@@ -15,7 +15,7 @@
 import {
   IonPage,
   IonContent,
-  IonModal,
+  IonModal
 } from '@ionic/vue';
 import SignupModal from '../components/SignupModal';
 
@@ -25,12 +25,13 @@ export default {
     return {
       isSignup: false,
       spinnerPause: false,
-      loadingMsg: 'Logging In...'
+      loadingMsg: 'Logging In...',
+      code: ''
     };
   },
   methods: {
     dismissSignup() {
-      this.loadingMsg = 'Going Back...'
+      this.loadingMsg = 'Going Back...';
       this.isSignup = false;
       this.spinnerPause = false;
       this.$router.go(-1);
@@ -45,12 +46,14 @@ export default {
         console.log(res);
         if (res.status === 200) {
           this.$router.push(`/main/bp`);
-        } else if (res.status === 204) {
+        } else if (res.status === 201) {
           this.isSignup = true;
           this.spinnerPause = true;
-        } else {
-          this.$router.go(-1);
+          this.code = res.data;
+          console.log(res);
         }
+      }).catch(() => {
+        // this.$router.go(-1);
       });
     }
   }
@@ -64,6 +67,7 @@ export default {
   align-items: center;
   flex-direction: column;
 }
+
 ion-spinner {
   width: 65px !important;
   height: 65px !important;
