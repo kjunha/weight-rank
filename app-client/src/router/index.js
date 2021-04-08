@@ -1,17 +1,13 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import Main from '../views/Main';
 import SplashInit from '../views/SplashInit';
-import Login from '../views/Login'
+import Login from '../views/Login';
+import auth from '../middleware/auth';
 
 const routes = [
   {
     path: '/',
-    redirect: '/init',
-  },
-  {
-    path: '/main/:type',
-    name: 'main',
-    component: Main,
+    redirect: '/init'
   },
   {
     path: '/authenticated/:service',
@@ -21,13 +17,19 @@ const routes = [
   {
     path: '/init',
     name: 'init',
-    component: SplashInit,
+    component: SplashInit
   },
+  {
+    path: '/main/:type',
+    name: 'main',
+    component: Main,
+    beforeEnter: auth
+  }
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes
 });
 
 export default router;

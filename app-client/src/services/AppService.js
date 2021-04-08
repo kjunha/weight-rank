@@ -13,16 +13,4 @@ export default class AppService {
   getList(type) {
     return this.$axios.get(`record/rank/${type}`);
   }
-
-  getOauthIdentity(service) {
-    return this.$axios.get(`user/identity/${service}`);
-  }
-
-  getOauthAccessToken(service, code) {
-    return this.$axios.post(`user/token/${service}?code=${code}`);
-  }
-
-  registerNewUser(code, name, profile) {
-    return this.$axios.post(`user/signup`, { code, name, profile })
-  }
 }

@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     requestGithub() {
-      this.appApi.getOauthIdentity('github').then(res => {
+      this.userApi.getOauthIdentity('github').then(res => {
         const url = res.data
         if(url) {
           window.location.href = url

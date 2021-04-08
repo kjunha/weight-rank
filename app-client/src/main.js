@@ -24,14 +24,17 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 import './theme/core.css';
 
+const app = createApp(App).use(IonicVue).use(router);
+
 /* API Services */
 import AppService from './services/AppService';
-
-const app = createApp(App).use(IonicVue).use(router);
+import UserService from './services/UserService';
 
 //Assign Api Service
 const appApi = new AppService();
+const userApi = new UserService();
 app.config.globalProperties.appApi = appApi;
+app.config.globalProperties.userApi = userApi;
 
 router.isReady().then(() => {
   app.mount('#app');

@@ -25,11 +25,16 @@ Route.group(() => {
   Route.get('identity/:service', 'UserController.getIdentityUrl');
   Route.post('token/:service', 'UserController.getAccessToken');
   Route.post('signup', 'UserController.signup');
-  Route.post('test', async () => {
-    const res = await Redis.hget('authcheck', 'nuxy0jt');
-    return { res: JSON.parse(res) };
-  });
-}).prefix('api/v1/user');
+  Route.put('signup', 'UserController.undoSignup')
+  Route.get('session', async ({auth, response}) => {
+    try {
+      await auth.check()
+    } catch (err) {
+      return response.unauthorized()
+    }
+    return response.ok()
+  })
+}).prefix('api/v1/user').middleware('credential');
 
 Route.group(() => {
   Route.get('rank/:type', 'RecordController.getList');

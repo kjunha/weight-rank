@@ -6,7 +6,8 @@ const DB = use('Database');
 const Redis = use('Redis');
 
 class UserController extends BaseController {
-  async getIdentityUrl({ ally, response }) {
+  async getIdentityUrl({ ally, auth, response }) {
+    await auth.logout();
     const url = await ally.driver('github').getRedirectUrl();
     return response.send(url);
   }
@@ -25,13 +26,12 @@ class UserController extends BaseController {
     const user = await ally.driver('github').getUser();
     const token = user.getAccessToken();
     const email = user.getEmail();
-    const service = request.params.service
-    console.log(token, email, service)
+    const service = request.params.service;
+    console.log(token, email, service);
     let userCheck = await User.query()
       .where('email', email)
       .where('oauth_service', service)
       .first();
-    console.log(userCheck)
     if (!userCheck) {
       const code = Math.random().toString(36).substring(5);
       const preRegistered = await Redis.hget('authcheck', code);
@@ -42,34 +42,46 @@ class UserController extends BaseController {
       // returns 204 when user is not found
       return response.status(201).send(code);
     }
-    if(userCheck.oauth_key !== token) {
-      userCheck.oauth_key = token
-      await userCheck.save()
+    if (userCheck.oauth_key !== token) {
+      userCheck.oauth_key = token;
+      await userCheck.save();
     }
-    await auth.attempt(token, email);
-    return response.send(auth.user);
+    try {
+      let authStatus = await auth.check();
+      if (authStatus) {
+        return response.ok('already logged in');
+      }
+    } catch (err) {
+      await auth.login(userCheck);
+      return response.ok();
+    }
   }
 
   async signup({ request, response }) {
-    const data = request.only(['code', 'name', 'profile'])
-    console.log(data)
+    const data = request.only(['code', 'name', 'profile']);
     const authInfo = await Redis.hget('authcheck', data.code);
     if (!authInfo) {
       return response.notFound('key_not_found');
     }
-    const token = JSON.parse(authInfo)
+    const token = JSON.parse(authInfo);
     let newUser = await User.create({
       email: token.email,
       oauth_key: token.token,
       oauth_service: token.service
-    })
+    });
     let newUserProfile = await Profile.create({
       user_id: newUser.id,
       user_name: data.name,
       user_profile: data.profile
-    })
-    await Redis.hdel('authcheck', data.code)
-    return response.send('test...')
+    });
+    await Redis.hdel('authcheck', data.code);
+    return response.send('test...');
+  }
+
+  async undoSignup({ request, response }) {
+    const data = request.only(['code']);
+    await Redis.hdel('authcheck', data.code);
+    return response.ok();
   }
 }
 

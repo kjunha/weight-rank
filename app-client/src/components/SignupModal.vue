@@ -42,6 +42,7 @@ export default {
   },
   methods: {
     dismissModal() {
+      this.userApi.undoSignup(this.cacheKey)
       modalController.dismiss().then(() => {
         this.$emit('signupDidDismiss');
       });
@@ -50,7 +51,7 @@ export default {
       // TODO: Needs Validation
       const userName = this.$refs.userName.value
       const userProfile = ''
-      this.appApi.registerNewUser(this.cacheKey, userName, userProfile)
+      this.userApi.registerNewUser(this.cacheKey, userName, userProfile)
         .then(res => {
           console.log(res);
         });
