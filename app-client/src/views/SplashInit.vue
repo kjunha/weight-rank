@@ -6,7 +6,7 @@
     <!--  z-index=1 covering drawer style  -->
     <div id="login-area">
       some text
-      <ion-button expand="block" color="dark" shape="rounded">
+      <ion-button expand="block" color="dark" shape="rounded" @click='requestGithub()'>
         <ion-icon slot="icon-only" :icon="logoGithub"></ion-icon> Login with Github
       </ion-button>
     </div>
@@ -21,6 +21,16 @@ export default {
   data() {
     return {
       logoGithub
+    }
+  },
+  methods: {
+    requestGithub() {
+      this.userApi.getOauthIdentity('github').then(res => {
+        const url = res.data
+        if(url) {
+          window.location.href = url
+        }
+      })
     }
   },
 };

@@ -15,10 +15,26 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
+const Redis = use('Redis');
 
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' };
 });
+
+Route.group(() => {
+  Route.get('identity/:service', 'UserController.getIdentityUrl');
+  Route.post('token/:service', 'UserController.getAccessToken');
+  Route.post('signup', 'UserController.signup');
+  Route.put('signup', 'UserController.undoSignup')
+  Route.get('session', async ({auth, response}) => {
+    try {
+      await auth.check()
+    } catch (err) {
+      return response.unauthorized()
+    }
+    return response.ok()
+  })
+}).prefix('api/v1/user').middleware('credential');
 
 Route.group(() => {
   Route.get('rank/:type', 'RecordController.getList');
