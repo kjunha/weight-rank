@@ -1,5 +1,7 @@
 package io.ionic.starter;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.getcapacitor.BridgeActivity;
@@ -11,6 +13,10 @@ public class MainActivity extends BridgeActivity {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    Intent intent = getIntent();
+    String action = intent.getAction();
+    Uri data = intent.getData();
 
     // Initializes the Bridge
     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{

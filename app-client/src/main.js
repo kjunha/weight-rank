@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { Plugins } from '@capacitor/core';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -26,7 +27,7 @@ import './theme/variables.css';
 import './theme/core.css';
 
 const app = createApp(App).use(IonicVue).use(router).use(store);
-
+const capacitor = Plugins.App;
 /* API Services */
 import AppService from './services/AppService';
 import UserService from './services/UserService';
@@ -39,4 +40,11 @@ app.config.globalProperties.userApi = userApi;
 
 router.isReady().then(() => {
   app.mount('#app');
+  capacitor.addListener('appUrlOpen', data => {
+    const slug = data.url.split('.app').pop()
+    console.log('slug ::: ' + slug)
+    if(slug) {
+      router.push(slug)
+    }
+  })
 });

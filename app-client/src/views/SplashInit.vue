@@ -1,38 +1,42 @@
 <template>
   <ion-page>
-    <ion-content class="ion-padding">
+    <ion-content class='ion-padding'>
       <h2>image view</h2>
     </ion-content>
     <!--  z-index=1 covering drawer style  -->
-    <div id="login-area">
+    <div id='login-area'>
       some text
-      <ion-button expand="block" color="dark" shape="rounded" @click='requestGithub()'>
-        <ion-icon slot="icon-only" :icon="logoGithub"></ion-icon> Login with Github
+      <ion-button expand='block' color='dark' shape='rounded' @click='requestGithub()'>
+        <ion-icon slot='icon-only' :icon='logoGithub'></ion-icon>
+        Login with Github
       </ion-button>
     </div>
   </ion-page>
 </template>
 <script>
-import { IonPage, IonContent, IonButton } from "@ionic/vue";
+import { IonPage, IonContent, IonButton } from '@ionic/vue';
 import { logoGithub } from 'ionicons/icons';
+import { Plugins } from '@capacitor/core';
 
+const { Browser } = Plugins;
 export default {
   components: { IonPage, IonContent, IonButton },
   data() {
     return {
       logoGithub
-    }
+    };
   },
   methods: {
     requestGithub() {
-      this.userApi.getOauthIdentity('github').then(res => {
-        const url = res.data
-        if(url) {
-          window.location.href = url
+      this.userApi.getOauthIdentity('github').then(async res => {
+        const url = res.data;
+        console.debug(url)
+        if (url) {
+          await Browser.open({ url });
         }
-      })
+      });
     }
-  },
+  }
 };
 </script>
 <style>
