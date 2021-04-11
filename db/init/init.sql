@@ -51,6 +51,7 @@ create table if not exists users
 (
     id            bigint unsigned not null unique auto_increment primary key,
     email         varchar(255)    not null,
+    password      varchar(255)    not null,
     oauth_key     varchar(255)    not null,
     oauth_service varchar(255)    not null comment 'GITHUB, GOOGLE, FACEBOOK, NAVER, KAKAO',
     user_status   enum ('ACTIVE', 'INACTIVE', 'DEREGISTER', 'SUSPENDED') default 'ACTIVE',
@@ -67,4 +68,15 @@ create table if not exists user_profiles
     user_profile varchar(255)             default null comment '프로필 사진',
     created_at   timestamp       not null default current_timestamp,
     updated_at   timestamp                default null on update current_timestamp
+);
+
+create table if not exists tokens
+(
+    id         int unsigned auto_increment primary key,
+    user_id    bigint unsigned         null,
+    token      varchar(255)         not null,
+    type       varchar(80)          not null,
+    is_revoked tinyint(1) default 0 null,
+    created_at datetime             null,
+    updated_at datetime             null
 );

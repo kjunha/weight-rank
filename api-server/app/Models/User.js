@@ -1,6 +1,7 @@
 'use strict';
 
 const Model = use('Model');
+const Hash = use('Hash')
 
 class User extends Model {
   static get updatedAtColumn() {
@@ -11,6 +12,9 @@ class User extends Model {
   }
   profile() {
     return this.hasOne('App/Models/Profile');
+  }
+  tokens() {
+    return this.hasMany('App/Models/Token')
   }
 }
 

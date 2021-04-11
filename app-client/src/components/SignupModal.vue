@@ -42,18 +42,23 @@ export default {
   },
   methods: {
     dismissModal() {
-      this.userApi.undoSignup(this.cacheKey)
+      this.userApi.undoSignup(this.cacheKey);
       modalController.dismiss().then(() => {
         this.$emit('signupDidDismiss');
       });
     },
     registerUser() {
       // TODO: Needs Validation
-      const userName = this.$refs.userName.value
-      const userProfile = ''
+      const userName = this.$refs.userName.value;
+      const userProfile = '';
       this.userApi.registerNewUser(this.cacheKey, userName, userProfile)
         .then(res => {
           console.log(res);
+          if (res.status == 200) {
+            let token = res.data.token;
+            this.$store.commit('setIdentity', token);
+            this.$router.push(`/main/bp`);
+          }
         });
     }
   }

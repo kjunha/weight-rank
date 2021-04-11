@@ -35,16 +35,19 @@ export default {
       this.isSignup = false;
       this.spinnerPause = false;
       this.$router.go(-1);
-    }
+    },
   },
   mounted() {
     const service = this.$route.params.service;
     const code = this.$route.query.code;
-    
+
     if (service && code) {
       this.userApi.getOauthAccessToken(service, code).then(res => {
         console.log(res);
         if (res.status === 200) {
+          let token = res.data.token;
+          console.log('after', token)
+          this.$store.commit('setIdentity', token);
           this.$router.push(`/main/bp`);
         } else if (res.status === 201) {
           this.isSignup = true;
@@ -53,7 +56,7 @@ export default {
           console.log(res);
         }
       }).catch(() => {
-        // this.$router.go(-1);
+        this.$router.go(-1);
       });
     }
   }

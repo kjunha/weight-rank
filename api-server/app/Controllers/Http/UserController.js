@@ -7,7 +7,6 @@ const Redis = use('Redis');
 
 class UserController extends BaseController {
   async getIdentityUrl({ ally, auth, response }) {
-    await auth.logout();
     const url = await ally.driver('github').getRedirectUrl();
     return response.send(url);
   }
@@ -46,18 +45,12 @@ class UserController extends BaseController {
       userCheck.oauth_key = token;
       await userCheck.save();
     }
-    try {
-      let authStatus = await auth.check();
-      if (authStatus) {
-        return response.ok('already logged in');
-      }
-    } catch (err) {
-      await auth.login(userCheck);
-      return response.ok();
-    }
+    let apiToken = await auth.generate(userCheck);
+    this.revokeRemainCurrentToken(userCheck.id);
+    return response.json(apiToken);
   }
 
-  async signup({ request, response }) {
+  async signup({ auth, request, response }) {
     const data = request.only(['code', 'name', 'profile']);
     const authInfo = await Redis.hget('authcheck', data.code);
     if (!authInfo) {
@@ -75,13 +68,20 @@ class UserController extends BaseController {
       user_profile: data.profile
     });
     await Redis.hdel('authcheck', data.code);
-    return response.send('test...');
+    console.log('signup process', { newUser });
+    let apiToken = await auth.generate(newUser);
+    return response.json(apiToken);
   }
 
   async undoSignup({ request, response }) {
     const data = request.only(['code']);
     await Redis.hdel('authcheck', data.code);
     return response.ok();
+  }
+
+  async revokeRemainCurrentToken(userId) {
+    let latest = await DB.table('tokens').where('user_id', userId).orderBy('id','desc').first()
+    await DB.table('tokens').where('user_id', userId).whereNot('id', latest.id).update('is_revoked', 1)
   }
 }
 

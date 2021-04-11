@@ -2,6 +2,7 @@
   "appId": "io.ionic.starter",
   "appName": "app-client",
   "bundledWebRuntime": false,
+  "linuxAndroidStudioPath": "/usr/local/android-studio/bin/studio.sh",
   "npmClient": "npm",
   "webDir": "dist",
   "plugins": {

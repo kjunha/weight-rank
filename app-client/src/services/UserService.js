@@ -3,13 +3,10 @@ import axios from 'axios';
 export default class UserService {
   constructor() {
     this.$axios = axios.create({
-      // Android VM 에서 호스트 머신의 localhost 를 보는 주소
-      // baseURL: 'http://10.0.2.2:3333/api/v1/',
-      baseURL: 'http://localhost:3333/api/v1/user/',
+      baseURL: process.env.VUE_APP_API + 'user/',
       headers: {
         'Content-Type': 'application/json'
       },
-      withCredentials: true
     });
   }
 
@@ -25,11 +22,11 @@ export default class UserService {
     return this.$axios.post(`signup`, { code, name, profile });
   }
 
-  checkSession() {
-    return this.$axios.get('session');
+  checkSession(token) {
+    return this.$axios.get('session', {headers: {'Authorization': `Bearer ${token}`}});
   }
 
   undoSignup(code) {
-    return this.$axios.put('signup', { code }, { withCredentials: false });
+    return this.$axios.put('signup', { code });
   }
 }
