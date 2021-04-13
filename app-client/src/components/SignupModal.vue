@@ -52,11 +52,12 @@ export default {
       const userName = this.$refs.userName.value;
       const userProfile = '';
       this.userApi.registerNewUser(this.cacheKey, userName, userProfile)
-        .then(res => {
+        .then(async res => {
           console.log(res);
           if (res.status == 200) {
             let token = res.data.token;
             this.$store.commit('setIdentity', token);
+            await modalController.dismiss()
             this.$router.push(`/main/bp`);
           }
         });

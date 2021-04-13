@@ -15,7 +15,7 @@
 import {
   IonPage,
   IonContent,
-  IonModal
+  IonModal,
 } from '@ionic/vue';
 import SignupModal from '../components/SignupModal';
 
