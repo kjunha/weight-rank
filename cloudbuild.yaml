@@ -2,7 +2,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [ 'cp', 'gs://environment-oakscorp-svc/weight-rank-api/.production.env', '.env' ]
   - name: 'docker'
-    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/api-server', '-f', './storage/gcr', '.' ]
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/api-server', '-f', './storage/gcr/Dockerfile', '.' ]
   - name: 'docker'
     args: [ 'push', 'gcr.io/$PROJECT_ID/api-server' ]
   - name: 'gcr.io/cloud-builders/gcloud'
