@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import Main from '../views/Main';
 import SplashInit from '../views/SplashInit';
 import Login from '../views/Login';
-import auth from '../middleware/auth';
+import PersonalInformation from '../views/personal';
+
+// import auth from '../middleware/auth';
 
 const routes = [
   {
@@ -23,8 +25,13 @@ const routes = [
     path: '/main/:type',
     name: 'main',
     component: Main,
-    beforeEnter: auth
-  }
+    // beforeEnter: auth
+  },
+  {
+    path: '/personal',
+    name: 'personal',
+    component: PersonalInformation,
+  },
 ];
 
 const router = createRouter({
