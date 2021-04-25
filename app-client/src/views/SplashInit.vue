@@ -22,6 +22,9 @@
         <ion-icon slot='icon-only' :icon='logoTwitter'></ion-icon>
         Login with Twitter
       </ion-button>
+      <ion-button expand='block' color='dark' shape='rounded' href="main/sq" id="loginbuttons">
+        HOME(임시)
+      </ion-button>
     </div>
   </ion-page>
 </template>
@@ -57,7 +60,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
   #login-area {
     z-index: 1;

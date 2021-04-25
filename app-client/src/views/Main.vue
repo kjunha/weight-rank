@@ -3,14 +3,13 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>Weight Rank</ion-title>
-        <span class="core-inline-block core-align-vm profile-area" slot="end">
+        <span class="core-inline-block core-align-vm profile-area" slot="end" >
           <ion-text class="core-inline-block" color="medium">
-            <small>Jane Cooper</small>
           </ion-text>
+          <ion-icon slot='icon-only' :icon='heart'></ion-icon>
+          <ion-icon slot='icon-only' :icon='barbell'></ion-icon>
           <ion-avatar class="core-inline-block avatar">
-            <ion-img
-              src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
-            ></ion-img>
+            <ion-img src='https://images.squarespace-cdn.com/content/v1/5dd41472699a1b3c39b7d412/1576028456106-8ZME3R6IJ48CMHVHW14C/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Pauline+Rothwell-15148.jpg'></ion-img>
           </ion-avatar>
         </span>
       </ion-toolbar>
@@ -124,9 +123,12 @@
           <ion-icon slot="icon-only" :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
+
+      
     </ion-content>
   </ion-page>
 </template>
+
 <script>
 import {
   IonPage,
@@ -150,7 +152,7 @@ import {
   IonFabButton,
   IonIcon
 } from "@ionic/vue";
-import { add } from "ionicons/icons";
+import { add, home, heart, barbell } from "ionicons/icons";
 
 export default {
   components: {
@@ -177,7 +179,7 @@ export default {
   },
   data() {
     return {
-      add,
+      add, home, heart, barbell,
       recordType: this.$route.params.type,
       gen: this.$route.query.gen ?? "overall",
       dummyList: [],
@@ -250,6 +252,7 @@ export default {
 .menu-tabs {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 20px;
 }
 
 .menu-tab {
@@ -273,8 +276,8 @@ export default {
 }
 
 .avatar {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   margin: 0 12px;
 }
 
