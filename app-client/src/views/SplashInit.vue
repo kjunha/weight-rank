@@ -52,6 +52,7 @@
           const url = res.data;
           console.debug(url)
           if (url) {
+            
             await Browser.open({ url });
           }
         });

@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class UserService {
   constructor() {
     this.$axios = axios.create({
-      baseURL: process.env.VUE_APP_API + 'user/',
+      baseURL: 'http://127.0.0.1:3333/api/v1/' + 'user/',
       headers: {
         'Content-Type': 'application/json'
       },
