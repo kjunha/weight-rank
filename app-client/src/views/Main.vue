@@ -7,8 +7,7 @@
           <ion-text class="core-inline-block" color="medium">
           </ion-text>
           <ion-icon slot='icon-only' :icon='heart'></ion-icon>
-          <ion-icon slot='icon-only' :icon='barbell'></ion-icon>
-          <ion-avatar class="core-inline-block avatar">
+          <ion-avatar class="core-inline-block avatar" @click="toHere('/personal')">
             <ion-img src='https://images.squarespace-cdn.com/content/v1/5dd41472699a1b3c39b7d412/1576028456106-8ZME3R6IJ48CMHVHW14C/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Pauline+Rothwell-15148.jpg'></ion-img>
           </ion-avatar>
         </span>
@@ -231,6 +230,10 @@ export default {
           }
         });
       });
+    },
+    toHere(url) {
+      this.$router.push(url);
+      console.log(this.$route.path);
     }
   },
   mounted() {
@@ -245,14 +248,24 @@ export default {
         }
       });
     });
-  }
+  },
+  
 };
 </script>
-<style>
+<style scoped>
+ion-title {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.profile-area ion-icon {
+  width:30px;
+  height: 30px;
+}
+
 .menu-tabs {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 20px;
 }
 
 .menu-tab {
@@ -276,8 +289,8 @@ export default {
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   margin: 0 12px;
 }
 
