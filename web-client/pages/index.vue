@@ -74,6 +74,10 @@
         </div>
       </div>
     </section>
+
+    <div class="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 
