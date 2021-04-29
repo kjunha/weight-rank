@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
   img {
-    width: 250px;
+    width: 300px;
   }
 
   .logo:hover {

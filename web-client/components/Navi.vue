@@ -34,7 +34,7 @@ export default {
         margin: 0px;
         padding-left: 0px;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 22px;
     }
 
     li {
