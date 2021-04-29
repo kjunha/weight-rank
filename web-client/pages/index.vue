@@ -14,7 +14,7 @@
     <section class="contents1">
       <div class="main-contents">
         <h1 style="font-weight:700;">나의 3대 운동은 <br>어느 정도일까?</h1>
-        <p>다른 사람들과 운동 루틴을 공유하고 <br>내 랭크가 얼마나 되는지 알아보자</p>
+        <h5>다른 사람들과 운동 루틴을 공유하고 <br>내 랭크가 얼마나 되는지 알아보자</h5>
         <div class="downloadlink1">
           <img src="@/assets/GooglePlay.png" alt="googlePlay" width="180px">
           <img src="@/assets/AppStore.png" alt="googlePlay" width="180px">
@@ -22,7 +22,10 @@
       </div>
     </section>
     <section class="contents2">
-      another contents2
+      <div class="paragraph1">
+        <h2 style="font-weight:700;">너는 삼대 몇치냐?</h2>
+        <h5>쇠질은 즐거워. 들때마다 짜릿하지. <br>난 지금 3대 480드는데 조상님이 조금만 더 도와주신다면 500클럽 들어갈 수 있을거같아. <br>다른 사람들이랑 내 순위를 알 수 있으니까 더 자극되는거 같아!</h5>
+      </div>
     </section>
   </div>
 </template>
@@ -85,4 +88,17 @@ export default {}
     flex-direction: row;
   }
 
+  .contents2 {
+    margin-top: 0;
+    height: calc(35vh);
+    background-color: rgb(228, 228, 228);
+  }
+  .paragraph1 {
+    width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
 </style>
