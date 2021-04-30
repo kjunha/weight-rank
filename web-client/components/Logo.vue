@@ -17,12 +17,13 @@ export default {
 
 <style scoped>
   img {
-    width: 300px;
+    width: 220px;
   }
 
   .logo:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
+    cursor: pointer;
   }
   @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }

@@ -1,9 +1,9 @@
 <template>
     <div class="navigation">
         <ul>
-            <li><a href="#">서비스 소개</a></li>
+            <li><a href="#service" class="servicecss">서비스 소개</a></li>
             <li><a href="#">채용</a></li>
-            <li><a href="#">뉴스룸</a></li>
+            <li><a href="rank">랭킹</a></li>
             <li><a href="#">제휴문의</a></li>
             <li><a href="#">FAQ</a></li>
         </ul>
@@ -25,7 +25,7 @@ export default {
         font-style: normal;
     }
     .navigation {
-        width: 550px;
+        width: 600px;
         display: flex;
         align-items: center;
     }
@@ -34,7 +34,7 @@ export default {
         margin: 0px;
         padding-left: 0px;
         font-weight: 700;
-        font-size: 22px;
+        font-size: 18px;
     }
 
     li {
@@ -61,4 +61,7 @@ export default {
         color: tomato;
     }
     
+    .servicecss {
+        transition: 0.5s;
+    }
 </style>
