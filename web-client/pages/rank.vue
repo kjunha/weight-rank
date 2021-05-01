@@ -16,45 +16,49 @@
                 <h1>국내 TOP 10</h1>
             </div>
             <div class="toptier">
-                <div class="rank2">
-                    <div></div>
-                    <div>
-                        <p>🥈</p>
-                        <img src="https://lh3.googleusercontent.com/proxy/XcC8MtP9znfZ4cXSCBsruaJHmzOVaFf1st5ynVZc5EWn-0M87K2cCi_2pQum1g5flWmX_DIyj-x7KnSLxXMqcOEP8SRQ4bRIwCq0UFEef4wZxy73_xUkBMzI4rnzeS__Ap_4LRXBti9EI1ERLkEUMBUvNzN1UXEUX5p10m2axIkYg08DE4LBKFP4PyKVX-ScrEovcQmsX7JkKZUs_PRJjvuvE8wsNXNjU_zPVXCKtANX8yRFQdB0GqMZxhsR5pwQ2_DD00-yDxsshfqKyxYqfYFQFggpy1T_-Eg1yD5lxcmPuDZ8Su8CYgdjHelI-RxxAK7DstkloQejodHxqzzErMO-VuRDaws5gzpJPSHkhCMOc5cIVtZVVqC5Wy-dlKCdEHbS7jTCMiHWNcWkVLCMWb4MC4vRTlB0Ow1O0snZBiT76awdbbkJfuAXNFGdKL5ft7uvIS8mxbROiLiNfxOrAlmEz6G1oX8pqpPBUDEZqSBQMPs" alt="profile">
+                <div class="rank2-wrap">
+                    <div class="rank2">
+                        <div></div>
+                        <div>
+                            <p>🥈</p>
+                            <img src="https://whywetrain.com/wp-content/uploads/2017/12/1514142280_andrei-deiu-300x300.jpg" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>헨리 파웰</p>
+                            <p>💪🏻Professional Gym</p>
+                        </div>
+                        <h1>2</h1>
                     </div>
-                    <div class="nameandwhere">
-                        <p>야엘 셀비아</p>
-                        <p>💪🏻MyProtein Gym</p>
-                    </div>
-                    <h1>2</h1>
                 </div>
 
-                <div class="rank1">
-                    <div></div>
-                    <div>
-                        <p>🥇</p>
-                        <img src="https://lh3.googleusercontent.com/proxy/XcC8MtP9znfZ4cXSCBsruaJHmzOVaFf1st5ynVZc5EWn-0M87K2cCi_2pQum1g5flWmX_DIyj-x7KnSLxXMqcOEP8SRQ4bRIwCq0UFEef4wZxy73_xUkBMzI4rnzeS__Ap_4LRXBti9EI1ERLkEUMBUvNzN1UXEUX5p10m2axIkYg08DE4LBKFP4PyKVX-ScrEovcQmsX7JkKZUs_PRJjvuvE8wsNXNjU_zPVXCKtANX8yRFQdB0GqMZxhsR5pwQ2_DD00-yDxsshfqKyxYqfYFQFggpy1T_-Eg1yD5lxcmPuDZ8Su8CYgdjHelI-RxxAK7DstkloQejodHxqzzErMO-VuRDaws5gzpJPSHkhCMOc5cIVtZVVqC5Wy-dlKCdEHbS7jTCMiHWNcWkVLCMWb4MC4vRTlB0Ow1O0snZBiT76awdbbkJfuAXNFGdKL5ft7uvIS8mxbROiLiNfxOrAlmEz6G1oX8pqpPBUDEZqSBQMPs" alt="profile">
+                <div class="rank1-wrap">
+                    <div class="rank1">
+                        <div></div>
+                        <div>
+                            <p>🥇</p>
+                            <img src="https://lh3.googleusercontent.com/proxy/XcC8MtP9znfZ4cXSCBsruaJHmzOVaFf1st5ynVZc5EWn-0M87K2cCi_2pQum1g5flWmX_DIyj-x7KnSLxXMqcOEP8SRQ4bRIwCq0UFEef4wZxy73_xUkBMzI4rnzeS__Ap_4LRXBti9EI1ERLkEUMBUvNzN1UXEUX5p10m2axIkYg08DE4LBKFP4PyKVX-ScrEovcQmsX7JkKZUs_PRJjvuvE8wsNXNjU_zPVXCKtANX8yRFQdB0GqMZxhsR5pwQ2_DD00-yDxsshfqKyxYqfYFQFggpy1T_-Eg1yD5lxcmPuDZ8Su8CYgdjHelI-RxxAK7DstkloQejodHxqzzErMO-VuRDaws5gzpJPSHkhCMOc5cIVtZVVqC5Wy-dlKCdEHbS7jTCMiHWNcWkVLCMWb4MC4vRTlB0Ow1O0snZBiT76awdbbkJfuAXNFGdKL5ft7uvIS8mxbROiLiNfxOrAlmEz6G1oX8pqpPBUDEZqSBQMPs" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>야엘 셀비아</p>
+                            <p>💪🏻MyProtein Gym</p>
+                        </div>
+                        <h1>1</h1>
                     </div>
-                    <div class="nameandwhere">
-                        <p>야엘 셀비아</p>
-                        <p>💪🏻MyProtein Gym</p>
-                    </div>
-                    <h1>1</h1>
                 </div>
-
-                <div class="rank3">
-                    <div></div>
-                    <div>
-                        <p>🥉</p>
-                        <img src="https://lh3.googleusercontent.com/proxy/XcC8MtP9znfZ4cXSCBsruaJHmzOVaFf1st5ynVZc5EWn-0M87K2cCi_2pQum1g5flWmX_DIyj-x7KnSLxXMqcOEP8SRQ4bRIwCq0UFEef4wZxy73_xUkBMzI4rnzeS__Ap_4LRXBti9EI1ERLkEUMBUvNzN1UXEUX5p10m2axIkYg08DE4LBKFP4PyKVX-ScrEovcQmsX7JkKZUs_PRJjvuvE8wsNXNjU_zPVXCKtANX8yRFQdB0GqMZxhsR5pwQ2_DD00-yDxsshfqKyxYqfYFQFggpy1T_-Eg1yD5lxcmPuDZ8Su8CYgdjHelI-RxxAK7DstkloQejodHxqzzErMO-VuRDaws5gzpJPSHkhCMOc5cIVtZVVqC5Wy-dlKCdEHbS7jTCMiHWNcWkVLCMWb4MC4vRTlB0Ow1O0snZBiT76awdbbkJfuAXNFGdKL5ft7uvIS8mxbROiLiNfxOrAlmEz6G1oX8pqpPBUDEZqSBQMPs" alt="profile">
+                <div class="rank3-wrap">
+                    <div class="rank3">
+                        <div></div>
+                        <div>
+                            <p>🥉</p>
+                            <img src="https://www.superprof.com/images/teachers/teacher-home-fitness-model-and-personal-trainer-give-advice-and-train-people-get-shape.jpg" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>그레고리 노비치</p>
+                            <p>💪🏻MyProtein Gym</p>
+                        </div>
+                        <h1>3</h1>
                     </div>
-                    <div class="nameandwhere">
-                        <p>야엘 셀비아</p>
-                        <p>💪🏻MyProtein Gym</p>
-                    </div>
-                    <h1>3</h1>
                 </div>
-
             </div>
             <div class="rest">
                 <div class="oneperson">
@@ -199,6 +203,7 @@ export default {
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+        margin-top: 40px;
     }
     .oneperson {
         text-align: center;
@@ -211,6 +216,12 @@ export default {
         align-items: center;
         margin-top: 20px;
         border-radius: 12px;
+        transition: transform .5s;
+        cursor: pointer;
+    }
+
+    .oneperson:hover {
+        transform: scale(1.05); 
     }
 
     .oneperson img {
@@ -229,21 +240,66 @@ export default {
         width: 220px;
         height: 420px;
         border-radius: 20px;
-        clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0% 0%);
+        clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
         grid-template-rows: 1fr 10fr 4fr 5fr;
+        transition: transform .5s;
+        cursor: pointer;
+    }
+
+    .rank1-wrap {
+        transition: transform .5s;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+    }
+
+    .rank1-wrap:hover {
+        filter: drop-shadow(0px 0px 20px #ffd621);
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+    }
+
+    .rank1:hover {
+        transform: scale(1.05); 
+        
     }
 
     .rank2 {
         color: white;
         background-image: url(https://image.freepik.com/free-vector/abstract-silver-line-shadow-slash-on-black-with-blank-space-design-modern-luxury-background_33869-1997.jpg);
         text-align: center;
-        width: 180px;
-        height: 380px;
+        width: 200px;
+        height: 400px;
         border-radius: 20px;
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
         grid-template-rows: 1fr 10fr 4fr 5fr;
+        transition: transform .5s;
+        cursor: pointer;
+    }
+
+    .rank2:hover {
+        transform: scale(1.05); 
+    }
+
+    .rank2-wrap {
+        transition: transform .5s;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+    }
+
+    .rank2-wrap:hover {
+        filter: drop-shadow(0px 0px 20px #a3a3a3);
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
     }
 
     .rank3 {
@@ -256,6 +312,28 @@ export default {
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
         grid-template-rows: 1fr 10fr 4fr 5fr;
+        transition: transform .5s;
+        cursor: pointer;
+    }
+
+    .rank3-wrap {
+        transition: transform .5s;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+    }
+
+    .rank3-wrap:hover {
+        filter: drop-shadow(0px 0px 20px #6e4433);
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+    }
+
+    .rank3:hover {
+        transform: scale(1.05); 
     }
 
     .rank1 img {
@@ -276,7 +354,7 @@ export default {
         flex-direction: row;
         justify-content: space-around;
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     .maintext {

@@ -54,8 +54,7 @@ export default {
     }
 
     li:hover {
-        transform: scale(1.2);
-        
+        transform: scale(1.2);  
     }
     a:hover {
         color: tomato;
