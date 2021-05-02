@@ -17,7 +17,7 @@
 const Route = use('Route');
 const Redis = use('Redis');
 
-Route.get('/', () => {
+Route.get('api/v1', () => {
   return { greeting: 'Hello world in JSON' };
 });
 
