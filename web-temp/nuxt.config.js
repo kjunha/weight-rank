@@ -41,6 +41,6 @@ export default {
   },
   server: {
     host: process.env.NODE_ENV === "production" ? "0.0.0.0" : "127.0.0.1",
-    port: 8080
+    port: 3000
   }
 }
