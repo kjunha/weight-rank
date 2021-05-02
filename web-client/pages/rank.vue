@@ -186,26 +186,6 @@
         mounted() {
             this.countries.push(
                 {
-                    name: 'Australia',
-                    code: 'AU',
-                    lang: 'eng'
-                }, {
-                    name: 'Canada',
-                    code: 'CA',
-                    lang: 'eng'
-                }, {
-                    name: 'China',
-                    code: 'CN',
-                    lang: 'chn'
-                }, {
-                    name: 'Hong Kong',
-                    code: 'HK',
-                    lang: 'chn'
-                }, {
-                    name: 'Japan',
-                    code: 'JP',
-                    lang: 'jap'
-                }, {
                     name: '대한민국',
                     code: 'KR',
                     lang: 'kor'
