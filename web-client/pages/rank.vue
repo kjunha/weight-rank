@@ -207,17 +207,17 @@
                 </div>
             </div>
             <div class="rest" v-else-if="selected == 'World'">
-                <div class="oneperson" v-for="(user, index) in orderedUsers" v-bind:key="index">
-                    <p>{{index+1}}위</p>
+                <div class="oneperson" v-for="index in 10" v-bind:key="index">
+                    <p>{{index}}위</p>
                     <div>
-                        <img :src= "user.photo" alt="profile">
+                        <img :src= "orderedUsers[index].photo" alt="profile">
                     </div>
                     <div class="nameandwhere">
-                        <p>{{ user.name }}</p>
-                        <p style="font-size:.7rem;">💪🏻{{ user.belong }}</p>
+                        <p>{{ orderedUsers[index].name }}</p>
+                        <p style="font-size:.7rem;">💪🏻{{ orderedUsers[index].belong }}</p>
                     </div>
                     <div></div>
-                    <p>{{ user.sum }}kg</p>
+                    <p>{{ orderedUsers[index].sum }}kg</p>
                 </div>
             </div>
         </div>
