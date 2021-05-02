@@ -1,7 +1,7 @@
 <template>
     <div class="navigation">
         <ul>
-            <li><a href="#service" class="servicecss">서비스 소개</a></li>
+            <li><a href="/#service" class="servicecss">서비스 소개</a></li>
             <li><a href="#">채용</a></li>
             <li><a href="rank">랭킹</a></li>
             <li><a href="#">제휴문의</a></li>
