@@ -12,7 +12,6 @@
         </div>
 
         <div class="rankers">
-
             <div class="wheresearch">   
                 <div class="countryselect">
                     <div class="input-select">
@@ -31,12 +30,13 @@
                 <h1 v-else-if="selected=='United States'">US TOP 10</h1>
                 <h1 v-else-if="selected=='World'">World TOP 10</h1>
             </div>
+
             <div class="toptier" v-if="selected=='Korea'">
                 <div class="rank2-wrap">
                     <div class="rank2">
                         <div></div>
-                        <div>
-                            <p>🥈</p>
+                        <div><p>🥈</p></div>
+                        <div class="portrait">
                             <img :src="KoreaUsers[1].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -51,8 +51,8 @@
                 <div class="rank1-wrap">
                     <div class="rank1">
                         <div></div>
-                        <div>
-                            <p>🥇</p>
+                        <div><p>🥇</p></div>
+                        <div class="portrait">
                             <img :src="KoreaUsers[0].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -66,8 +66,8 @@
                 <div class="rank3-wrap">
                     <div class="rank3">
                         <div></div>
-                        <div>
-                            <p>🥉</p>
+                        <div><p>🥉</p></div>
+                        <div class="portrait">
                             <img :src="KoreaUsers[2].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -84,8 +84,8 @@
                 <div class="rank2-wrap">
                     <div class="rank2">
                         <div></div>
-                        <div>
-                            <p>🥈</p>
+                        <div><p>🥈</p></div>
+                        <div class="portrait">
                             <img :src="usaUsers[1].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -100,8 +100,8 @@
                 <div class="rank1-wrap">
                     <div class="rank1">
                         <div></div>
-                        <div>
-                            <p>🥇</p>
+                        <div><p>🥇</p></div>
+                        <div class="portrait">
                             <img :src="usaUsers[0].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -115,8 +115,8 @@
                 <div class="rank3-wrap">
                     <div class="rank3">
                         <div></div>
-                        <div>
-                            <p>🥉</p>
+                        <div><p>🥉</p></div>
+                        <div class="portrait">
                             <img :src="usaUsers[2].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -133,8 +133,8 @@
                 <div class="rank2-wrap">
                     <div class="rank2">
                         <div></div>
-                        <div>
-                            <p>🥈</p>
+                        <div><p>🥈</p></div>
+                        <div class="portrait">
                             <img :src="orderedUsers[1].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -149,9 +149,10 @@
                 <div class="rank1-wrap">
                     <div class="rank1">
                         <div></div>
-                        <div>
-                            <p>🥇</p>
-                            <img :src="orderedUsers[0].photo" alt="profile">
+                        <div><p>🥇</p></div>
+                        <div class="portrait">
+                            <div class="img" :style="{backgroundImage: 'url(${orderedUsers[0].photo})'}"></div>
+                            <!-- <img :src="orderedUsers[0].photo" alt="profile"> -->
                         </div>
                         <div class="nameandwhere">
                             <p>{{orderedUsers[0].name}}</p>
@@ -164,8 +165,8 @@
                 <div class="rank3-wrap">
                     <div class="rank3">
                         <div></div>
-                        <div>
-                            <p>🥉</p>
+                        <div><p>🥉</p></div>
+                        <div class="portrait">
                             <img :src="orderedUsers[2].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
@@ -360,7 +361,7 @@
                     {
                         name: 'Yael Shelbia',
                         belong: 'Professional Gym',
-                        photo: 'https://lh3.googleusercontent.com/proxy/4c6kHjpilv7N1BJfD-WUOVoxsaa9tuK1SxEfx-fwT4lxOwUvI-C3qeXllazRD4Ha5lbXlkJ0RnLPN3DkuwjjWV67lEdyBqk96XwUARJDna1JEi6U173Ptq_oaHagXVjYdqS1lRfiEO5-0rp1li0nsVyFdRCJlEiRi6wjaUPL_k-TqYyMUh0r3OU1RMPa5HfpWdB2pC7MnoHFb5G7c-tWUnpkC7SJBxCSB_WBszit5PMMvFjTZOBxld7Jqniw2nrzKWbk5rYQmoHT9B7LG-SEhX8VROwiL-XJEQQB1U5WP37ixZ0efJV1jj7c8iLA_k9EF-3iuDokxF7S3-PcWHeIkgAGFDH7Pk_00KZNLwDnuIc7zpe2IukhK8qI-hXzwJs1jOUuQvrvoSNmyfIZy4cN-KKNE5McLJxvVTd885WK-ZfROlEPHo7oMwkZQkVJizk8sSP8HHTYaW5QUlF5CLstYvT63jCNmSvkrq8CS-BOwm-_Fvk',
+                        photo: 'https://t1.daumcdn.net/liveboard/kinolights/dd178713745444ac8f51ea70402a016a.jpg',
                         SQweight: 708,
                         DLweight: 798,
                         BPweight: 710,
@@ -559,7 +560,7 @@
         border-radius: 20px;
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
-        grid-template-rows: 1fr 9fr 3fr 2fr 4fr;
+        grid-template-rows: 1fr 1fr 9fr 3fr 2fr 4fr;
         transition: transform .5s;
         cursor: pointer;
     }
@@ -594,7 +595,7 @@
         border-radius: 20px;
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
-        grid-template-rows: 1fr 8fr 3fr 2fr 4fr;
+        grid-template-rows: 1fr 1fr 7fr 3fr 2fr 4fr;
         transition: transform .5s;
         cursor: pointer;
     }
@@ -628,7 +629,7 @@
         border-radius: 20px;
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
-        grid-template-rows: 1fr 8fr 3fr 2fr 4fr;
+        grid-template-rows: 1fr 1fr 7fr 3fr 2fr 4fr;
         transition: transform .5s;
         cursor: pointer;
     }
@@ -651,6 +652,12 @@
 
     .rank3:hover {
         transform: scale(1.05); 
+    }
+
+    .portrait {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
     }
 
     .rank1 img {
