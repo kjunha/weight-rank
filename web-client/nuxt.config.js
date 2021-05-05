@@ -29,7 +29,12 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/device',
+  ],
+
+  preset: [
+    ['@babel/preset-env', { 'loose': true }]
   ],
 
   dotenv: {
@@ -41,5 +46,8 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    host: process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1',
+    port: 8080
+  }
 };
