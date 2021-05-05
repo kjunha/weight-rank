@@ -12,7 +12,6 @@
         </div>
 
         <div class="rankers">
-
             <div class="wheresearch">   
                 <div class="countryselect">
                     <div class="input-select">
@@ -27,150 +26,199 @@
             </div>
 
             <div class="maintext">
-                <h1>{{ selected }} TOP 10</h1>
+                <h1 v-if="selected=='Korea'">국내 TOP 10</h1>
+                <h1 v-else-if="selected=='United States'">US TOP 10</h1>
+                <h1 v-else-if="selected=='World'">World TOP 10</h1>
             </div>
-            <div class="toptier">
+
+            <div class="toptier" v-if="selected=='Korea'">
                 <div class="rank2-wrap">
                     <div class="rank2">
                         <div></div>
-                        <div>
-                            <p>🥈</p>
-                            <img src="https://whywetrain.com/wp-content/uploads/2017/12/1514142280_andrei-deiu-300x300.jpg" alt="profile">
+                        <div><p>🥈</p></div>
+                        <div class="portrait">
+                            <img :src="KoreaUsers[1].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
-                            <p>헨리 파웰</p>
-                            <p>💪🏻Professional Gym</p>
+                            <p>{{KoreaUsers[1].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{KoreaUsers[1].belong}}</p>
                         </div>
-                        <h1>2</h1>
+                        <h5>{{KoreaUsers[1].sum}}kg</h5>
+                        <h2>2</h2>
                     </div>
                 </div>
 
                 <div class="rank1-wrap">
                     <div class="rank1">
                         <div></div>
-                        <div>
-                            <p>🥇</p>
-                            <img src="https://lh3.googleusercontent.com/proxy/4c6kHjpilv7N1BJfD-WUOVoxsaa9tuK1SxEfx-fwT4lxOwUvI-C3qeXllazRD4Ha5lbXlkJ0RnLPN3DkuwjjWV67lEdyBqk96XwUARJDna1JEi6U173Ptq_oaHagXVjYdqS1lRfiEO5-0rp1li0nsVyFdRCJlEiRi6wjaUPL_k-TqYyMUh0r3OU1RMPa5HfpWdB2pC7MnoHFb5G7c-tWUnpkC7SJBxCSB_WBszit5PMMvFjTZOBxld7Jqniw2nrzKWbk5rYQmoHT9B7LG-SEhX8VROwiL-XJEQQB1U5WP37ixZ0efJV1jj7c8iLA_k9EF-3iuDokxF7S3-PcWHeIkgAGFDH7Pk_00KZNLwDnuIc7zpe2IukhK8qI-hXzwJs1jOUuQvrvoSNmyfIZy4cN-KKNE5McLJxvVTd885WK-ZfROlEPHo7oMwkZQkVJizk8sSP8HHTYaW5QUlF5CLstYvT63jCNmSvkrq8CS-BOwm-_Fvk" alt="profile">
+                        <div><p>🥇</p></div>
+                        <div class="portrait">
+                            <img :src="KoreaUsers[0].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
-                            <p>야엘 셀비아</p>
-                            <p>💪🏻MyProtein Gym</p>
+                            <p>{{KoreaUsers[0].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{KoreaUsers[0].belong}}</p>
                         </div>
+                        <h4>{{KoreaUsers[0].sum}}kg</h4>
                         <h1>1</h1>
                     </div>
                 </div>
                 <div class="rank3-wrap">
                     <div class="rank3">
                         <div></div>
-                        <div>
-                            <p>🥉</p>
-                            <img src="https://www.superprof.com/images/teachers/teacher-home-fitness-model-and-personal-trainer-give-advice-and-train-people-get-shape.jpg" alt="profile">
+                        <div><p>🥉</p></div>
+                        <div class="portrait">
+                            <img :src="KoreaUsers[2].photo" alt="profile">
                         </div>
                         <div class="nameandwhere">
-                            <p>그레고리 노비치</p>
-                            <p>💪🏻MyProtein Gym</p>
+                            <p>{{KoreaUsers[2].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{KoreaUsers[2].belong}}</p>
                         </div>
-                        <h1>3</h1>
+                        <h5>{{KoreaUsers[2].sum}}kg</h5>
+                        <h2>3</h2>
                     </div>
                 </div>
             </div>
-            <div class="rest">
-                <div class="oneperson">
-                    <p>4위</p>
-                    <div>
-                        <img src="https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg" alt="profile">
+
+            <div class="toptier" v-else-if="selected=='United States'">
+                <div class="rank2-wrap">
+                    <div class="rank2">
+                        <div></div>
+                        <div><p>🥈</p></div>
+                        <div class="portrait">
+                            <img :src="usaUsers[1].photo" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>{{usaUsers[1].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{usaUsers[1].belong}}</p>
+                        </div>
+                        <h5>{{usaUsers[1].sum}}kg</h5>
+                        <h2>2</h2>
                     </div>
-                    <div class="nameandwhere">
-                        <p>바바라 팔빈</p>
-                        <p>💪🏻MVP Gym</p>
-                    </div>
-                    <div></div>
-                    <p>494kg</p>
-                    <p style="color: green;">▲4</p>
                 </div>
 
-                <div class="oneperson">
-                    <p>5위</p>
-                    <div>
-                        <img src="https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg" alt="profile">
+                <div class="rank1-wrap">
+                    <div class="rank1">
+                        <div></div>
+                        <div><p>🥇</p></div>
+                        <div class="portrait">
+                            <img :src="usaUsers[0].photo" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>{{usaUsers[0].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{usaUsers[0].belong}}</p>
+                        </div>
+                        <h4>{{usaUsers[0].sum}}kg</h4>
+                        <h1>1</h1>
                     </div>
-                    <div class="nameandwhere">
-                        <p>바바라 팔빈</p>
-                        <p>💪🏻MVP Gym</p>
+                </div>
+                <div class="rank3-wrap">
+                    <div class="rank3">
+                        <div></div>
+                        <div><p>🥉</p></div>
+                        <div class="portrait">
+                            <img :src="usaUsers[2].photo" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>{{usaUsers[2].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{usaUsers[2].belong}}</p>
+                        </div>
+                        <h5>{{usaUsers[2].sum}}kg</h5>
+                        <h2>3</h2>
                     </div>
-                    <div></div>
-                    <p>494kg</p>
-                    <p style="color: green;">▲1</p>
+                </div>
+            </div>
+
+            <div class="toptier" v-else-if="selected=='World'">
+                <div class="rank2-wrap">
+                    <div class="rank2">
+                        <div></div>
+                        <div><p>🥈</p></div>
+                        <div class="portrait">
+                            <img :src="orderedUsers[1].photo" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>{{orderedUsers[1].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{orderedUsers[1].belong}}</p>
+                        </div>
+                        <h5>{{orderedUsers[1].sum}}kg</h5>
+                        <h2>2</h2>
+                    </div>
                 </div>
 
-                <div class="oneperson">
-                    <p>6위</p>
-                    <div>
-                        <img src="https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg" alt="profile">
+                <div class="rank1-wrap">
+                    <div class="rank1">
+                        <div></div>
+                        <div><p>🥇</p></div>
+                        <div class="portrait">
+                            <div class="img" :style="{backgroundImage: 'url(${orderedUsers[0].photo})'}"></div>
+                            <!-- <img :src="orderedUsers[0].photo" alt="profile"> -->
+                        </div>
+                        <div class="nameandwhere">
+                            <p>{{orderedUsers[0].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{orderedUsers[0].belong}}</p>
+                        </div>
+                        <h4>{{orderedUsers[0].sum}}kg</h4>
+                        <h1>1</h1>
                     </div>
-                    <div class="nameandwhere">
-                        <p>바바라 팔빈</p>
-                        <p>💪🏻MVP Gym</p>
-                    </div>
-                    <div></div>
-                    <p>494kg</p>
-                    <p style="color: red;">▼2</p>
                 </div>
-
-                <div class="oneperson">
-                    <p>7위</p>
-                    <div>
-                        <img src="https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg" alt="profile">
+                <div class="rank3-wrap">
+                    <div class="rank3">
+                        <div></div>
+                        <div><p>🥉</p></div>
+                        <div class="portrait">
+                            <img :src="orderedUsers[2].photo" alt="profile">
+                        </div>
+                        <div class="nameandwhere">
+                            <p>{{orderedUsers[2].name}}</p>
+                            <p style="font-size:.7rem;">💪🏻{{orderedUsers[2].belong}}</p>
+                        </div>
+                        <h5>{{orderedUsers[2].sum}}kg</h5>
+                        <h2>3</h2>
                     </div>
-                    <div class="nameandwhere">
-                        <p>바바라 팔빈</p>
-                        <p>💪🏻MVP Gym</p>
-                    </div>
-                    <div></div>
-                    <p>494kg</p>
-                    <p style="color: red;">▼4</p>
                 </div>
+            </div>
 
-                <div class="oneperson">
-                    <p>8위</p>
+            <div class="rest" v-if="selected=='Korea'">
+                <div class="oneperson" v-for="(user, index) in KoreaUsers" v-bind:key="index">
+                    <p>{{index+1}}위</p>
                     <div>
-                        <img src="https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg" alt="profile">
+                        <img :src= "user.photo" alt="profile">
                     </div>
                     <div class="nameandwhere">
-                        <p>바바라 팔빈</p>
-                        <p>💪🏻MVP Gym</p>
+                        <p>{{ user.name }}</p>
+                        <p style="font-size:.7rem;">💪🏻{{ user.belong }}</p>
                     </div>
                     <div></div>
-                    <p>494kg</p>
-                    <p style="color: red;">▼4</p>
+                    <p>{{ user.sum }}kg</p>
                 </div>
-
-                <div class="oneperson">
-                    <p>9위</p>
+            </div>
+            <div class="rest" v-else-if="selected=='United States'">
+                <div class="oneperson" v-for="(user, index) in usaUsers" v-bind:key="index">
+                    <p>{{index+1}}위</p>
                     <div>
-                        <img src="https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg" alt="profile">
+                        <img :src= "user.photo" alt="profile">
                     </div>
                     <div class="nameandwhere">
-                        <p>바바라 팔빈</p>
-                        <p>💪🏻MVP Gym</p>
+                        <p>{{ user.name }}</p>
+                        <p style="font-size:.7rem;">💪🏻{{ user.belong }}</p>
                     </div>
                     <div></div>
-                    <p>494kg</p>
-                    <p style="color: red;">▼4</p>
+                    <p>{{ user.sum }}kg</p>
                 </div>
-
-                <div class="oneperson">
-                    <p>10위</p>
+            </div>
+            <div class="rest" v-else-if="selected == 'World'">
+                <div class="oneperson" v-for="index in 10" v-bind:key="index">
+                    <p>{{index}}위</p>
                     <div>
-                        <img src="https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg" alt="profile">
+                        <img :src= "orderedUsers[index].photo" alt="profile">
                     </div>
                     <div class="nameandwhere">
-                        <p>바바라 팔빈</p>
-                        <p>💪🏻MVP Gym</p>
+                        <p>{{ orderedUsers[index].name }}</p>
+                        <p style="font-size:.7rem;">💪🏻{{ orderedUsers[index].belong }}</p>
                     </div>
                     <div></div>
-                    <p>494kg</p>
-                    <p style="color: red;">▼4</p>
+                    <p>{{ orderedUsers[index].sum }}kg</p>
                 </div>
             </div>
         </div>
@@ -186,7 +234,7 @@
         mounted() {
             this.countries.push(
                 {
-                    name: '대한민국',
+                    name: 'Korea',
                     code: 'KR',
                     lang: 'kor'
                 }, {
@@ -194,7 +242,12 @@
                     code: 'US',
                     lang: 'eng'
                 }, 
-            )
+                {
+                    name: 'World',
+                    code: 'WD',
+                    lang: 'eng'
+                }
+            )            
         },
         data() {
             return {
@@ -209,7 +262,194 @@
                         code: '',
                         lang: 'kor'
                     },                
-                ]
+                ],
+
+                //사용자 정보 더미 데이터
+                users: [
+                    {
+                        name: '김정력',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 505,
+                        DLweight: 680,
+                        BPweight: 482,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '정력왕',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 508,
+                        DLweight: 598,
+                        BPweight: 410,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '박혁거세',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 508,
+                        DLweight: 558,
+                        BPweight: 440,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '장거근',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 528,
+                        DLweight: 528,
+                        BPweight: 520,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '임꺽정',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 608,
+                        DLweight: 698,
+                        BPweight: 610,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '존시나',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 508,
+                        DLweight: 378,
+                        BPweight: 380,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '홍길동',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 459,
+                        DLweight: 408,
+                        BPweight: 432,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '이순신',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 568,
+                        DLweight: 518,
+                        BPweight: 510,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '이산',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 408,
+                        DLweight: 498,
+                        BPweight: 410,
+                        nation: 'Korea'
+                    },
+                    {
+                        name: '심밧드',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 568,
+                        DLweight: 458,
+                        BPweight: 420,
+                        nation: 'Korea'
+                    },
+
+                    //미국
+                    {
+                        name: 'Yael Shelbia',
+                        belong: 'Professional Gym',
+                        photo: 'https://t1.daumcdn.net/liveboard/kinolights/dd178713745444ac8f51ea70402a016a.jpg',
+                        SQweight: 708,
+                        DLweight: 798,
+                        BPweight: 710,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'Henrry Parwell',
+                        belong: 'Professional Gym',
+                        photo: 'https://whywetrain.com/wp-content/uploads/2017/12/1514142280_andrei-deiu-300x300.jpg',
+                        SQweight: 703,
+                        DLweight: 790,
+                        BPweight: 700,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'Geregory Novich',
+                        belong: 'Professional Gym',
+                        photo: 'https://www.superprof.com/images/teachers/teacher-home-fitness-model-and-personal-trainer-give-advice-and-train-people-get-shape.jpg',
+                        SQweight: 702,
+                        DLweight: 791,
+                        BPweight: 690,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'John Johnson',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 198,
+                        DLweight: 191,
+                        BPweight: 190,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'Michael Bundler',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 195,
+                        DLweight: 185,
+                        BPweight: 202,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'Ethan Dursteler',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 196,
+                        DLweight: 199,
+                        BPweight: 168,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'Ben Frank',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 210,
+                        DLweight: 185,
+                        BPweight: 165,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'DeWein Johnson',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 168,
+                        DLweight: 136,
+                        BPweight: 188,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'Kendrick Poster',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 200,
+                        DLweight: 168,
+                        BPweight: 194,
+                        nation: 'United States'
+                    },
+                    {
+                        name: 'Fredrick Doson',
+                        belong: 'Professional Gym',
+                        photo: 'https://i.pinimg.com/564x/8f/c2/1a/8fc21a37378c9f32226a61f89532a7ad.jpg',
+                        SQweight: 182,
+                        DLweight: 184,
+                        BPweight: 154,
+                        nation: 'United States'
+                    },
+                ],
+                
             }
         },
 
@@ -225,8 +465,27 @@
                     }
                 })
                 return name;
+            },
+
+            orderedUsers : function() {
+                this.users.forEach(element => {
+                    element.sum = element.SQweight+element.DLweight+element.BPweight;
+                });
+                return this.users.sort(function(a,b) { return b.sum - a.sum });
+            },
+
+            KoreaUsers : function() {
+                return this.orderedUsers.filter(function(item) {
+                    return item.nation == 'Korea';
+                })
+            },
+
+            usaUsers : function() {
+                return this.orderedUsers.filter(function(item) {
+                    return item.nation == 'United States';
+                })
             }
-        }
+        },
     }
 </script>
 
@@ -301,7 +560,7 @@
         border-radius: 20px;
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
-        grid-template-rows: 1fr 10fr 4fr 5fr;
+        grid-template-rows: 1fr 1fr 9fr 3fr 2fr 4fr;
         transition: transform .5s;
         cursor: pointer;
     }
@@ -336,7 +595,7 @@
         border-radius: 20px;
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
-        grid-template-rows: 1fr 10fr 4fr 5fr;
+        grid-template-rows: 1fr 1fr 7fr 3fr 2fr 4fr;
         transition: transform .5s;
         cursor: pointer;
     }
@@ -370,7 +629,7 @@
         border-radius: 20px;
         clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0% 0%);
         display: grid;
-        grid-template-rows: 1fr 10fr 4fr 5fr;
+        grid-template-rows: 1fr 1fr 7fr 3fr 2fr 4fr;
         transition: transform .5s;
         cursor: pointer;
     }
@@ -395,8 +654,14 @@
         transform: scale(1.05); 
     }
 
+    .portrait {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
     .rank1 img {
-        width: 140px;
+        width: 120px;
         border-radius: 70%;
     }
     .rank2 img {

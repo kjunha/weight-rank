@@ -25,8 +25,8 @@
 
     <section class="contents2" id="service">
       <div class="paragraph1">
-        <h3 style="font-weight:700;">너는 삼대 몇치냐?</h3>
-        <h4>쇠질은 즐거워. 들때마다 짜릿해. <br>난 지금 3대 480드는데 조상님이 조금만 더 도와주신다면 500클럽 들어갈 수 있을거같아. <br>다른 사람들이랑 내 순위를 알 수 있으니까 더 자극되는거 같아!</h4>
+        <h4 style="font-weight:700;">넌 삼대 몇쳐?</h4>
+        <h5>쇠질은 즐거워. 들때마다 짜릿해. <br>난 지금 3대 480드는데 조상님이 조금만 더 도와주신다면 500클럽에 들어갈 수 있을거 같아. <br>다른 사람들이랑 내 순위를 알 수 있으니까 더 자극되는거 같아!</h5>
       </div>
     </section>
 
@@ -35,8 +35,8 @@
         <div class="div2">
           <h1 style="font-weight: 700; font-size: 3rem; color: rgb(156, 156, 156);">01</h1>
           <div class="paragraph2">
-            <h1>내 순위를 알아보세요</h1>
-            <h4>내 3대 운동을 기록하고 <br>순위를 확인해 보세요. <br>지역별, 체육관 별로 내 순위를 확인할 수 있어요.</h4>
+            <h1>내 순위를<br>알아보세요</h1>
+            <h5>내 3대 운동을 기록하고<br>순위를 확인해 보세요. <br>지역별, 체육관 별로<br>내 순위를 확인할 수 있어요.</h5>
           </div>
           <div>
             
@@ -51,10 +51,10 @@
     <section class="contents3">
       <div class="div1">
         <div class="div2">
-          <h1 style="font-weight: 700; font-size: 3rem; color: rgb(156, 156, 156);">01</h1>
+          <h1 style="font-weight: 700; font-size: 3rem; color: rgb(156, 156, 156);">02</h1>
           <div class="paragraph2">
-            <h1>내 순위를 알아보세요</h1>
-            <h4>내 3대 운동을 기록하고 순위를 확인해 보세요. <br>지역별, 체육관 별로 내 순위를 확인할 수 있어요.</h4>
+            <h1>수행할 운동을<br>계획해 보세요</h1>
+            <h5>편하게 운동을 계획하거나<br>다른 사람이 짜놓은 계획표를 찾아보세요.</h5>
           </div>
           <div>
 
@@ -69,10 +69,12 @@
     <section class="contents3">
       <div class="div1">
         <div class="div2">
-          <h1 style="font-weight: 700; font-size: 3rem; color: rgb(156, 156, 156);">01</h1>
-          <div class="paragraph2">
-            <h1>내 순위를 알아보세요</h1>
-            <h4>내 3대 운동을 기록하고 <br>순위를 확인해 보세요. <br>지역별, 체육관 별로 내 순위를 확인할 수 있어요.</h4>
+          <h1 style="font-weight: 700; font-size: 3rem; color: rgb(156, 156, 156);">03</h1>
+          <div>
+            <div class="paragraph2">
+              <h1>내 운동을<br>공유해 보세요</h1>
+              <h5>운동은 같이 할 수록 재밋답니다.<br>다른 사람들의 운동도 볼 수 있어요.</h5>
+            </div>
           </div>
         </div>
         <div class="photo">
@@ -192,11 +194,15 @@ export default {
   }
 
   .contents3 {
-    height: calc(85vh);
+    height: calc(90vh);
   }
 
   .contents3 img {
-    width: 500px; 
+    width: 400px; 
   }
 
+  .div2 {
+    display: flex;
+    flex-direction: row;
+  }
 </style>
