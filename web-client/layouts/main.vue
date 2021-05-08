@@ -1,9 +1,7 @@
 <template>
   <div class='w-100'>
     <Navi />
-    <section class='content'>
-      <Nuxt />
-    </section>
+    <Nuxt />
     <Footer />
   </div>
 </template>
@@ -11,7 +9,7 @@
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -27,9 +25,7 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-.content {
-  margin-top: 135px;
-}
+
 .button--green {
   display: inline-block;
   border-radius: 4px;
@@ -59,7 +55,7 @@ html {
   background-color: #35495e;
 }
 @media (max-width: 750px) {
-  a p {
+  p {
     font-size: 0.8em;
   }
 }

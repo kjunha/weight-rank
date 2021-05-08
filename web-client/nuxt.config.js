@@ -37,6 +37,10 @@ export default {
     ['@babel/preset-env', { 'loose': true }]
   ],
 
+  bootstrapVue: {
+    icons: true
+  },
+
   dotenv: {
     filename: '.env'
   },

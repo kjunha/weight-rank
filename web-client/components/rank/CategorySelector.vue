@@ -1,29 +1,29 @@
 <template>
-  <section class='row px-5 mt-5 mb-5'>
+  <section class="row px-5 mt-5 mb-5">
     <!--  desktop layout  -->
-    <div v-if='!isMobile' class='px-9 w-100'>
-      <label for='country-d'>지역</label>
-      <div class='input-group mb-3'>
-        <select v-model='countryType' class='form-control' id='country-d'>
-          <option v-for='key in Object.keys(countries)' :key='key' :value='key'>
+    <div v-if="!isMobile" class="px-9 w-100">
+      <label for="country-d">지역</label>
+      <div class="input-group mb-3">
+        <select v-model="countryType" class="form-control" id="country-d">
+          <option v-for="key in Object.keys(countries)" :key="key" :value="key">
             {{ countries[key] }}
           </option>
         </select>
       </div>
     </div>
     <!--  mobile layout  -->
-    <div v-else>
-      <label for='country-m'>지역</label>
-      <div class='input-group mb-3'>
-        <select v-model='countryType' class='form-control' id='country-m'>
-          <option v-for='key in Object.keys(countries)' :key='key' :value='key'>
+    <div v-else class='w-100'>
+      <label for="country-m">지역</label>
+      <div class="input-group mb-3">
+        <select v-model="countryType" class="form-control" id="country-m">
+          <option v-for="key in Object.keys(countries)" :key="key" :value="key">
             {{ countries[key] }}
           </option>
         </select>
       </div>
     </div>
-    <h2 class='text-center w-100 mb-3'>{{ rankTitle[countryType] }}</h2>
-    <div class='menu-tabs'>
+    <h2 class="text-center w-100 mb-3">{{ rankTitle[countryType] }}</h2>
+    <div class="menu-tabs">
       <button
         :class="`menu-tab ${recordType === 'all' ? 'active' : ''}`"
         @click="changeType('all')"
@@ -56,7 +56,7 @@
 export default {
   name: 'RegionSelector',
   props: {
-    recordType: String
+    recordType: String,
   },
   emits: ['record-type-change'],
   data() {
@@ -66,20 +66,20 @@ export default {
       countries: {
         ko: '대한민국',
         us: 'United States',
-        gl: '글로벌'
+        gl: '글로벌',
       },
       rankTitle: {
         ko: '국내 Top 10',
         us: 'North America Top 10',
-        gl: '전세계 랭킹 Top 10'
-      }
+        gl: '전세계 랭킹 Top 10',
+      },
     };
   },
   methods: {
     changeType(type) {
       this.$emit('record-type-change', { type });
     },
-  }
+  },
 };
 </script>
 

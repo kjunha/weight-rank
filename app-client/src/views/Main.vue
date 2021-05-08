@@ -3,12 +3,16 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>Weight Rank</ion-title>
-        <span class="core-inline-block core-align-vm profile-area" slot="end" >
-          <ion-text class="core-inline-block" color="medium">
-          </ion-text>
-          <ion-icon slot='icon-only' :icon='heart'></ion-icon>
-          <ion-avatar class="core-inline-block avatar" @click="toHere('/personal')">
-            <ion-img src='https://images.squarespace-cdn.com/content/v1/5dd41472699a1b3c39b7d412/1576028456106-8ZME3R6IJ48CMHVHW14C/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Pauline+Rothwell-15148.jpg'></ion-img>
+        <span class="core-inline-block core-align-vm profile-area" slot="end">
+          <ion-text class="core-inline-block" color="medium"> </ion-text>
+          <ion-icon slot="icon-only" :icon="heart"></ion-icon>
+          <ion-avatar
+            class="core-inline-block avatar"
+            @click="toHere('/personal')"
+          >
+            <ion-img
+              src="https://images.squarespace-cdn.com/content/v1/5dd41472699a1b3c39b7d412/1576028456106-8ZME3R6IJ48CMHVHW14C/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Pauline+Rothwell-15148.jpg"
+            ></ion-img>
           </ion-avatar>
         </span>
       </ion-toolbar>
@@ -42,7 +46,7 @@
             color="secondary"
             class="filter-btn"
             @click="changeFilter('male')"
-          ><small>Male</small>
+            ><small>Male</small>
           </ion-chip>
           <ion-chip
             :outline="gen !== 'female'"
@@ -75,7 +79,7 @@
                   <ion-img :src="ranker.profile.profile"></ion-img>
                 </ion-avatar>
               </div>
-              
+
               <div class="user-info card-item">
                 <small>{{ convertToRank(index + 1) }}</small>
                 <h2>{{ ranker.profile.user_name }}</h2>
@@ -122,8 +126,6 @@
           <ion-icon slot="icon-only" :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-
-      
     </ion-content>
   </ion-page>
 </template>
@@ -149,9 +151,9 @@ import {
   IonInfiniteScrollContent,
   IonFab,
   IonFabButton,
-  IonIcon
-} from "@ionic/vue";
-import { add, home, heart, barbell } from "ionicons/icons";
+  IonIcon,
+} from '@ionic/vue';
+import { add, home, heart, barbell } from 'ionicons/icons';
 
 export default {
   components: {
@@ -174,21 +176,24 @@ export default {
     IonInfiniteScrollContent,
     IonFab,
     IonFabButton,
-    IonIcon
+    IonIcon,
   },
   data() {
     return {
-      add, home, heart, barbell,
+      add,
+      home,
+      heart,
+      barbell,
       recordType: this.$route.params.type,
-      gen: this.$route.query.gen ?? "overall",
+      gen: this.$route.query.gen ?? 'overall',
       dummyList: [],
       topThree: [],
       rankList: [],
       medalAsset: [
-        "/assets/images/gold@2x.png",
-        "/assets/images/silver@2x.png",
-        "/assets/images/bronze@2x.png"
-      ]
+        '/assets/images/gold@2x.png',
+        '/assets/images/silver@2x.png',
+        '/assets/images/bronze@2x.png',
+      ],
     };
   },
   methods: {
@@ -207,11 +212,11 @@ export default {
     convertToRank(index) {
       switch (index) {
         case 1:
-          return "1st";
+          return '1st';
         case 2:
-          return "2nd";
+          return '2nd';
         case 3:
-          return "3rd";
+          return '3rd';
         default:
           return `${index}th`;
       }
@@ -234,7 +239,7 @@ export default {
     toHere(url) {
       this.$router.push(url);
       console.log(this.$route.path);
-    }
+    },
   },
   mounted() {
     this.appApi.getList(this.recordType).then((res) => {
@@ -249,7 +254,6 @@ export default {
       });
     });
   },
-  
 };
 </script>
 <style scoped>
@@ -259,7 +263,7 @@ ion-title {
 }
 
 .profile-area ion-icon {
-  width:30px;
+  width: 30px;
   height: 30px;
 }
 
