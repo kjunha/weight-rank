@@ -59,8 +59,11 @@ html {
   background-color: #35495e;
 }
 @media (max-width: 750px) {
-  a p {
+  p, a, li {
     font-size: 0.8em;
+  }
+  h3, h4 {
+    font-size: 1.2em;
   }
 }
 </style>
