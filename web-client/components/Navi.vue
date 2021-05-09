@@ -1,66 +1,109 @@
 <template>
-    <div class="navigation">
-        <ul>
-            <li><a href="/#service" class="servicecss">서비스 소개</a></li>
-            <li><a href="#">채용</a></li>
-            <li><a href="rank">랭킹</a></li>
-            <li><a href="registerGYM">체육관 등록</a></li>
-            <li><a href="#">FAQ</a></li>
-        </ul>
+  <div :class="`navigation ${isMobile ? 'w-100' : 'm-25'}`">
+    <Logo />
+    <div v-if="!isMobile" class="menu">
+      <ul class="menu-ul pc-menu-ul">
+        <li class="pc-menu-li">
+          <a href="#service" class="servicecss">서비스 소개</a>
+        </li>
+        <li class="pc-menu-li"><a href="#">채용</a></li>
+        <li class="pc-menu-li"><a href="rank">랭킹</a></li>
+        <li class="pc-menu-li"><a href="register">제휴문의</a></li>
+        <li class="pc-menu-li"><a href="#">FAQ</a></li>
+      </ul>
     </div>
+    <div v-else class="mr-3">
+      <b-button>
+        <b-icon icon="list" v-b-toggle.side-menu></b-icon>
+      </b-button>
+      <b-sidebar
+        id="side-menu"
+        :no-close-on-backdrop='false'
+      >
+        <ul class="menu-ul">
+          <li class="mobile-li p-3">
+            <a href="#service" class="servicecss">서비스 소개</a>
+          </li>
+          <li class="mobile-li p-3"><a href="#">채용</a></li>
+          <li class="mobile-li p-3"><a href="rank">랭킹</a></li>
+          <li class="mobile-li p-3"><a href="#">제휴문의</a></li>
+          <li class="mobile-li p-3"><a href="#">FAQ</a></li>
+        </ul>
+      </b-sidebar>
+    </div>
+  </div>
 </template>
-
 <script>
-
 export default {
-    
-}
+  data() {
+    return {
+      isMobile: this.$device.isMobile,
+    };
+  },
+  mounted() {
+    console.log('isMobile', this.isMobile);
+  },
+};
 </script>
-
 <style scoped>
-    @font-face {
-        font-family: 'IBMPlexSansKR-Regular';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    .navigation {
-        width: 600px;
-        display: flex;
-        align-items: center;
-    }
-    ul, li {
-        list-style: none;
-        margin: 0px;
-        padding-left: 0px;
-        font-weight: 700;
-        font-size: 18px;
-    }
+.navigation {
+  display: flex;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+.m-25 {
+  width: 55%;
+  margin-left: 22%;
+}
 
-    li {
-        transition: transform .2s;
-    }
+.menu {
+  width: 600px;
+  font-weight: 700;
+  font-size: 18px;
+}
 
-    ul {
-        display: flex;
-        justify-content: space-between;
-        flex-grow: 1;
-    }
+.menu-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-    a {
-        text-decoration: none;
-        color: white;
-        transition: color 0.3s;
-    }
+.mobile-li {
+  display: block;
+  border-bottom: 1px solid #383a3e;
+}
 
-    li:hover {
-        transform: scale(1.2);  
-    }
-    a:hover {
-        color: tomato;
-    }
-    
-    .servicecss {
-        transition: 0.5s;
-    }
+.mobile-li > a {
+  text-decoration: none;
+  color: #383a3e;
+}
+
+.pc-menu-ul {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.pc-menu-li:hover {
+  transform: scale(1.2);
+}
+
+.pc-menu-li > a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.pc-menu-li > a:hover {
+  color: tomato;
+}
+
+.servicecss {
+  transition: 0.5s;
+}
 </style>

@@ -9,10 +9,15 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/device": "^2.1.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxt/types": "^2.15.4"
+  }
 }
