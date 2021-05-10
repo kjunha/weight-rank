@@ -16,9 +16,8 @@ class RecordController extends BaseController {
     }
     let rankList = await Record.query()
       .where('record_type', type)
-      .where('cert_count', '>=', 3)
       .with('profile')
-      .orderBy('rm_kg', 'desc')
+      .orderBy(type, 'desc')
       .orderBy('cert_count', 'desc')
       .orderBy('updated_at', 'asc')
       .fetch();
