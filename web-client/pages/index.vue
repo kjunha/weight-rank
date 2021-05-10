@@ -107,10 +107,6 @@
 <script>
 export default {
   layout: 'main',
-  async asyncData({ app }) {
-    const data = await app.$appApi.connected();
-    console.log('received', data.data['greeting']);
-  },
   data() {
     return {
       testmsg: 'hello vue',
