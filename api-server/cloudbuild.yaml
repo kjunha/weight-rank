@@ -6,5 +6,15 @@ steps:
   - name: 'docker'
     args: [ 'push', 'gcr.io/$PROJECT_ID/api-server' ]
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: [ 'run', 'deploy', 'api-server-svc', '--image' ,'gcr.io/$PROJECT_ID/api-server', '--region', 'asia-northeast3', '--platform', 'managed' ]
+    args:
+      - 'run'
+      - 'deploy'
+      - 'api-server-svc'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/api-server'
+      - '--region'
+      - 'asia-northeast3'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
 images: [ 'gcr.io/$PROJECT_ID/api-server' ]

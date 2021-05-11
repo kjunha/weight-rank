@@ -1,7 +1,8 @@
-FROM gcr.io/oc-weight-rank/node:alpine15
+FROM node:15-alpine
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install -g @adonisjs/cli
-RUN npm install --only=productionq
+RUN npm install --only=production
 COPY . .
+RUN adonis migration:run
 CMD npm start
