@@ -4,24 +4,26 @@ const BaseController = use('App/Controllers/Http/BaseController');
 const Record = use('App/Models/Record');
 const User = use('App/Models/User');
 const DB = use('Database');
+
 class RecordController extends BaseController {
   // GET | record/rank/:type ::: 종목별 랭킹 조회
   async getList({ request, response }) {
-    let type = request.params.type;
-    let typeCheck = await DB.table('record_types')
-      .where('type_key', type)
-      .first();
-    if (!typeCheck) {
-      return response.forbidden('type not found');
+    let params = request.only(['type', 'page']);
+    if (params['type']) {
+      let typeCheck = await DB.table('record_types')
+        .where('type_key', params['type'])
+        .first();
+      if (!typeCheck) {
+        return response.forbidden('type not found');
+      }
     }
-    let rankList = await Record.query()
-      .where('record_type', type)
-      .with('profile')
+    let type = params['type'] ?? 'overall'
+    let page = params['page'] ?? 1;
+    let recordList = await Record.query()
+      .select('*', DB.raw('(bp + sq + dl) as overall'))
       .orderBy(type, 'desc')
-      .orderBy('cert_count', 'desc')
-      .orderBy('updated_at', 'asc')
-      .fetch();
-    return response.json(rankList);
+      .paginate(page, 10)
+    return response.json(recordList);
   }
 
   // GET | record/personal/:user_id ::: 회원별 모든 종목 기록 조회
