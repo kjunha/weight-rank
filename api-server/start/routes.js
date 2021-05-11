@@ -37,7 +37,5 @@ Route.group(() => {
 }).prefix('api/v1/user').middleware('credential');
 
 Route.group(() => {
-  Route.get('rank/:type', 'RecordController.getList');
-  Route.get('personal/:user_id', 'RecordController.getMyRecords');
-  Route.post('personal/:user_id', 'RecordController.updateRecord');
+  Route.get('rank', 'RecordController.getList');
 }).prefix('api/v1/record');

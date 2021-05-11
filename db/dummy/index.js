@@ -4,10 +4,9 @@ let lines = [];
 let users = [];
 
 for (let i = 0; i < 100; i++) {
-  let lift_kg = (Math.random() * 299).toFixed(2) + 1;
-  let reps = Math.floor(Math.random() * 30 + 1);
-  let rm_kg = (lift_kg * reps).toFixed(2);
-  let rm_lb = (rm_kg * 2.20462).toFixed(2);
+  let bp = (Math.random() * 299).toFixed(2) + 1;
+  let sq = (Math.random() * 299).toFixed(2) + 1;
+  let dl = (Math.random() * 299).toFixed(2) + 1;
   let cert_count = Math.floor(Math.random() * 15);
   let user_id = Math.floor(Math.random() * 1000) + 1000;
   while (true) {
@@ -19,9 +18,7 @@ for (let i = 0; i < 100; i++) {
     }
   }
   console.log(
-    `(${user_id}, '${
-      types[Math.floor(Math.random() * 3)]
-    }', ${rm_kg}, ${rm_lb}, ${reps}, ${cert_count},'https://link.com'),`
+    `(${user_id}, ${bp}, ${sq}, ${dl}, ${cert_count}),`
   );
 }
 console.log('################################');
