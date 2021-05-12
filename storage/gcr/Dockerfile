@@ -4,5 +4,4 @@ COPY package*.json ./
 RUN npm install -g @adonisjs/cli
 RUN npm install --only=production
 COPY . .
-RUN adonis migration:run --force
 CMD npm start
