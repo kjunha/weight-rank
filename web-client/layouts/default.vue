@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class='w-100'>
+    <Navi />
+    <section class='content'>
+      <Nuxt />
+    </section>
+    <Footer />
   </div>
 </template>
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -30,7 +27,9 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
+.content {
+  margin-top: 135px;
+}
 .button--green {
   display: inline-block;
   border-radius: 4px;
@@ -58,5 +57,13 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+@media (max-width: 750px) {
+  p, a, li {
+    font-size: 0.8em;
+  }
+  h3, h4 {
+    font-size: 1.2em;
+  }
 }
 </style>
