@@ -1,4 +1,6 @@
 steps:
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: [ 'cp', '$_BUCKET_NAME', '.env' ]
   - name: 'docker'
     args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/weight-rank-web', '.' ]
     env:
