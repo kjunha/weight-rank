@@ -1,5 +1,6 @@
 let types = ['BP', 'SQ', 'DL'];
 let services = ['GITHUB', 'GOOGLE', 'FACEBOOK', 'NAVER', 'KAKAO'];
+let gymNames = ['All Star Gym', 'Strong Powerlift', 'Clean Gym', '나눔 휘트니스', 'Goto Gym', 'Fitness M', 'Value Fitness']
 let lines = [];
 let users = [];
 
@@ -28,7 +29,8 @@ users.forEach((id, index) => {
 });
 console.log('################################');
 users.forEach((id, index) => {
+  let name = gymNames[Math.floor(Math.random() * gymNames.length)]
   console.log(
-    `(${id}, 'test_user_${index}', 'https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y'),`
+    `(${id}, 'test_user_${index}', 'https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y', '${name}'),`
   );
 });

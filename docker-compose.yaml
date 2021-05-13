@@ -1,10 +1,13 @@
 version: '3'
 services:
   server:
-    build: ./api-server
+    build:
+      context: ./api-server
+      dockerfile: storage/local/Dockerfile
     environment:
       - NODE_ENV=dev
-      - ENV_PATH=.env
+#      - ENV_PATH=.env
+      - ENV_PATH=.migration.env
     command: adonis serve --dev
     tty: true
     working_dir: /usr/src/app

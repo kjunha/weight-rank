@@ -25,8 +25,8 @@
     <h2 class="text-center w-100 mb-3">{{ rankTitle[countryType] }}</h2>
     <div class="menu-tabs">
       <button
-        :class="`menu-tab ${recordType === 'all' ? 'active' : ''}`"
-        @click="changeType('all')"
+        :class="`menu-tab ${recordType === 'overall' ? 'active' : ''}`"
+        @click="changeType('overall')"
       >
         Overall
       </button>

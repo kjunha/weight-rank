@@ -13,7 +13,7 @@ class RecordController extends BaseController {
       let typeCheck = await DB.table('record_types')
         .where('type_key', params['type'])
         .first();
-      if (!typeCheck) {
+      if (!typeCheck && params['type'] !== 'overall') {
         return response.forbidden('type not found');
       }
     }
@@ -21,6 +21,7 @@ class RecordController extends BaseController {
     let page = params['page'] ?? 1;
     let recordList = await Record.query()
       .select('*', DB.raw('(bp + sq + dl) as overall'))
+      .with('profile')
       .orderBy(type, 'desc')
       .paginate(page, 10)
     return response.json(recordList);
